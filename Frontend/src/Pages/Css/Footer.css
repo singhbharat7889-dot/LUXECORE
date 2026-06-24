@@ -1,0 +1,26 @@
+footer {
+  font-size: 0.9rem;
+}
+
+footer a:hover {
+  color: #0d6efd;
+  transition: 0.3s;
+}
+
+
+footer .form-control {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+footer .form-control::placeholder {
+  color: #6c757d;
+}
+
+footer .form-control:focus {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+  border-color: #0d6efd;
+  color: white;
+}
