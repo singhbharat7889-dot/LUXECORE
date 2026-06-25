@@ -11,92 +11,88 @@ function AdminNavbar() {
   };
 
   return (
-   <nav className="navbar bg-white border-bottom sticky-top shadow-sm">
-  <div className="container-fluid px-4">
+    <nav className="navbar bg-white border-bottom sticky-top shadow-sm py-2">
+      <div className="container-fluid px-3 px-md-4">
 
-    {/* Desktop Layout */}
-    <div className="d-none d-md-flex align-items-center justify-content-between position-relative w-100" style={{ height: "70px" }}>
+        {/* Desktop Layout */}
+        {/* Added w-100 so justify-content-between can stretch items across the screen */}
+        <div className="d-none d-md-flex w-100 justify-content-between align-items-center">
+          <div
+            className="fw-bold fs-3"
+            style={{ cursor: "pointer", userSelect: "none" }}
+            onClick={() => navigate("/AdminDashboard")}
+          >
+            Luxe<span style={{ color: "#0084b4" }}>Core</span>
+          </div>
 
-      <div
-        className="fw-semibold fs-5"
-        style={{ cursor: "pointer" }}
-        onClick={() => navigate("/AdminDashboard")}
-      >
-        Admin Dashboard
+          <div className="d-flex align-items-center gap-2">
+            <button
+              className="btn btn-outline-primary"
+              onClick={() => navigate("/AdminDashboard")}
+            >
+              <FaHome className="me-2" />
+              Dashboard
+            </button>
+
+            <button
+              className="btn btn-outline-dark"
+              onClick={() => navigate("/ProductForm")}
+            >
+              <FaBox className="me-2" />
+              Products
+            </button>
+
+            <button
+              className="btn btn-danger"
+              onClick={handleLogout}
+            >
+              <FaSignOutAlt className="me-2" />
+              Logout
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Layout */}
+        {/* Changed to row layout with w-100 and justify-content-between so logo stays left and actions go right */}
+        <div className="d-flex d-md-none w-100 justify-content-between align-items-center">
+          <div
+            className="fw-bold fs-4"
+            style={{ cursor: "pointer", userSelect: "none" }}
+            onClick={() => navigate("/AdminDashboard")}
+          >
+            Luxe<span style={{ color: "#0084b4" }}>Core</span>
+          </div>
+
+          {/* Buttons stay grouped together on the right side */}
+          <div className="d-flex gap-1">
+            <button
+              className="btn btn-sm btn-outline-primary"
+              onClick={() => navigate("/AdminDashboard")}
+              title="Dashboard"
+            >
+              <FaHome />
+            </button>
+
+            <button
+              className="btn btn-sm btn-outline-dark"
+              onClick={() => navigate("/ProductForm")}
+              title="Products"
+            >
+              <FaBox />
+            </button>
+
+            <button
+              className="btn btn-sm btn-danger"
+              onClick={handleLogout}
+              title="Logout"
+            >
+              <FaSignOutAlt />
+            </button>
+          </div>
+        </div>
+
       </div>
-
-      <div
-        className="position-absolute start-50 translate-middle-x fw-bold fs-3"
-        style={{ cursor: "pointer", userSelect: "none" }}
-        onClick={() => navigate("/AdminDashboard")}
-      >
-        Luxe<span style={{ color: "#0084b4" }}>Core</span>
-      </div>
-
-      <div className="d-flex align-items-center gap-2">
-        <button
-          className="btn btn-outline-primary"
-          onClick={() => navigate("/AdminDashboard")}
-        >
-          <FaHome className="me-2" />
-          Dashboard
-        </button>
-
-        <button
-          className="btn btn-outline-dark"
-          onClick={() => navigate("/ProductForm")}
-        >
-          <FaBox className="me-2" />
-          Products
-        </button>
-
-        <button
-          className="btn btn-danger"
-          onClick={handleLogout}
-        >
-          <FaSignOutAlt className="me-2" />
-          Logout
-        </button>
-      </div>
-    </div>
-
-    {/* Mobile Layout */}
-    <div className="d-flex d-md-none flex-column align-items-center py-2">
-
-      <div
-        className="fw-bold fs-3 mb-3"
-        style={{ cursor: "pointer", userSelect: "none" }}
-        onClick={() => navigate("/AdminDashboard")}
-      >
-        Luxe<span style={{ color: "#0084b4" }}>Core</span>
-      </div>
-
-      <div className="d-flex flex-wrap justify-content-center gap-2">
-        <button
-          className="btn btn-outline-primary"
-          onClick={() => navigate("/AdminDashboard")}
-        >
-          <FaHome />
-        </button>
-
-        <button
-          className="btn btn-outline-dark"
-          onClick={() => navigate("/ProductForm")}
-        >
-          <FaBox />
-        </button>
-
-        <button
-          className="btn btn-danger"
-          onClick={handleLogout}
-        >
-          <FaSignOutAlt />
-        </button>
-      </div>
-
-    </div>
-  </div>
-</nav>
+    </nav>
   );
 }
 
