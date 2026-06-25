@@ -11,7 +11,7 @@ function UserDashboard() {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get("http://localhost:5500/api/orders/admin/all");
+      const res = await axios.get("https://luxecore-api.onrender.com/api/orders/admin/all");
 
       setOrders(res.data);
     } catch (error) {
@@ -26,7 +26,7 @@ function UserDashboard() {
   const updateStatus = async (orderId, status) => {
     try {
       await axios.put(
-        `http://localhost:5500/api/orders/admin/status/${orderId}`,
+        `https://luxecore-api.onrender.com/api/orders/admin/status/${orderId}`,
         { status },
       );
 

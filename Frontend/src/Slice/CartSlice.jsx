@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import axios from "axios";
 
-const API = "http://localhost:5500/api/cart";
+const API = "https://luxecore-api.onrender.com/api/cart";
 
 // FETCH CART
 

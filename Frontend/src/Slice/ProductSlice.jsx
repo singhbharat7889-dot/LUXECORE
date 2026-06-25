@@ -15,7 +15,7 @@ export const fetchData =
 
       const res =
         await axios.get(
-          "http://localhost:5500/api/products"
+          "https://luxecore-api.onrender.com/api/products"
         );
 
       return res.data.products;

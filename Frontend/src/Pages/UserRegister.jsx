@@ -32,7 +32,7 @@ const RegistrationForm = () => {
     }
 
     try {
-      await axios.post("http://localhost:5500/api/users/UserRegister", formData);
+      await axios.post("https://luxecore-api.onrender.com/api/users/UserRegister", formData);
 
       setMessage("Registration successful!");
       setError("");

@@ -36,7 +36,7 @@ function UserProfile() {
     const fetchOrders = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5500/api/orders/${user._id}`,
+          `https://luxecore-api.onrender.com/api/orders/${user._id}`,
         );
 
         setOrders(res.data);

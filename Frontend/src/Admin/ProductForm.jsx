@@ -29,7 +29,7 @@ function ProductForm() {
 
     try {
       await axios.post(
-        "http://localhost:5500/api/products",
+        "https://luxecore-api.onrender.com/api/products",
         data,
         {
           headers: {

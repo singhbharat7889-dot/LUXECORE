@@ -8,7 +8,7 @@ function Products() {
   const getProducts = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5500/api/products"
+        "https://luxecore-api.onrender.com/api/products"
       );
 
       setProducts(res.data.products);
@@ -26,7 +26,7 @@ function Products() {
 
     try {
       await axios.delete(
-        `http://localhost:5500/api/products/${id}`
+        `https://luxecore-api.onrender.com/api/products/${id}`
       );
 
       // Remove deleted product from state

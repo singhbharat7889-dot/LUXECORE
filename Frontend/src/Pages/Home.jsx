@@ -14,7 +14,7 @@ function Home() {
 
 
   useEffect(() => {
-    fetch("http://localhost:5500/api/products")
+    fetch("https://luxecore-api.onrender.com/api/products")
       .then((res) => res.json())
 
       .then((data) => {

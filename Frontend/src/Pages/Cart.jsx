@@ -26,7 +26,7 @@ function Cart() {
 
   try {
     await axios.post(
-      "http://localhost:5500/api/orders",
+      "https://luxecore-api.onrender.com/api/orders",
       {
         userId: user._id,
       }

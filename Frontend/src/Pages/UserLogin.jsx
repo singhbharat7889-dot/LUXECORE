@@ -29,7 +29,7 @@ const LoginForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5500/api/users/UserLogin",
+        "https://luxecore-api.onrender.com/api/users/UserLogin",
         loginData,
       );
       console.log("respose", response.data.token);

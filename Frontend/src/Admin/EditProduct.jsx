@@ -35,7 +35,7 @@ function EditProduct() {
       try {
         const res =
           await axios.get(
-            `http://localhost:5500/api/products/${id}`
+            `https://luxecore-api.onrender.com/api/products/${id}`
           );
 
         setProduct(
