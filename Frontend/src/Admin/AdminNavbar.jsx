@@ -11,32 +11,39 @@ function AdminNavbar() {
   };
 
   return (
-    <nav className="navbar bg-white border-bottom sticky-top shadow-sm">
-      <div className="container-fluid px-4" style={{ height: "70px" }}>
-        
-        {/* Left Side */}
-        <div
-          className="fw-semibold fs-5"
-          style={{ cursor: "pointer" }}
-          onClick={() => navigate("/AdminDashboard")}
-        >
-          Admin Dashboard
+    <nav className="navbar bg-white border-bottom sticky-top shadow-sm py-2">
+      <div className="container-fluid d-flex flex-column flex-md-row align-items-center px-3 px-md-4">
+
+        {/* Top Row */}
+        <div className="w-100 d-flex justify-content-between align-items-center position-relative">
+
+          {/* Left Side - Hide on Mobile */}
+          <div
+            className="fw-semibold fs-5 d-none d-md-block"
+            style={{ cursor: "pointer" }}
+            onClick={() => navigate("/AdminDashboard")}
+          >
+            Admin Dashboard
+          </div>
+
+          {/* Logo */}
+          <div
+            className="mx-auto fw-bold fs-3"
+            style={{
+              cursor: "pointer",
+              userSelect: "none",
+            }}
+            onClick={() => navigate("/AdminDashboard")}
+          >
+            Luxe<span style={{ color: "#0084b4" }}>Core</span>
+          </div>
+
+          {/* Spacer for desktop alignment */}
+          <div className="d-none d-md-block" style={{ width: "180px" }} />
         </div>
 
-        {/* Center Logo */}
-        <div
-          className="position-absolute start-50 translate-middle-x fw-bold fs-3"
-          style={{
-            cursor: "pointer",
-            userSelect: "none",
-          }}
-          onClick={() => navigate("/AdminDashboard")}
-        >
-          Luxe<span style={{ color: "#0084b4" }}>Core</span>
-        </div>
-
-        {/* Right Side */}
-        <div className="d-flex align-items-center gap-2">
+        {/* Buttons */}
+        <div className="d-flex flex-wrap justify-content-center gap-2 mt-3 mt-md-0">
           <button
             className="btn btn-outline-primary"
             onClick={() => navigate("/AdminDashboard")}
@@ -61,6 +68,7 @@ function AdminNavbar() {
             Logout
           </button>
         </div>
+
       </div>
     </nav>
   );
