@@ -30,9 +30,9 @@ function App() {
   const dispatch = useDispatch();
 
 useEffect(() => {
-  const user = JSON.parse(
-    localStorage.getItem("user")
-  );
+  dispatch(fetchData());
+
+  const user = JSON.parse(localStorage.getItem("user"));
 
   if (user) {
     dispatch(fetchCartData());
