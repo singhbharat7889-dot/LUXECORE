@@ -15,11 +15,13 @@ function Shop() {
     (state) => state.product,
   );
 
-  const { cart } = useSelector((state) => state.cartItems);
+const { cart } = useSelector((state) => state.cartItems);
 
-  if (status === "loading") {
-    return <h1>Loading...</h1>;
-  }
+const [currentPage, setCurrentPage] = useState(1);
+
+if (status === "loading") {
+  return <h1>Loading...</h1>;
+}
 
   const handleIncrease = (id) => {
     dispatch(increaseQty(id));
@@ -40,7 +42,7 @@ function Shop() {
     const selectedQty = quantities[item._id] || 1;
 
     const cartItem = cart.find(
-      (cartProduct) => cartProduct.productId._id === item._id,
+      (cartProduct) => cartProduct.productId?._id === item._id,
     );
 
     if (cartItem) {
@@ -63,7 +65,7 @@ function Shop() {
     }
   };
 
-  const [currentPage, setCurrentPage] = useState(1);
+
 
   const productsPerPage = 10;
 
