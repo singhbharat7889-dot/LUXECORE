@@ -12,10 +12,10 @@ function FashionApparel() {
 
 
   const {
-    filteredProducts,
-    quantities,
-    status,
-  } = useSelector((state) => state.product);
+  productItems,
+  quantities,
+  status,
+} = useSelector((state) => state.product);
 
   const { cart } = useSelector((state) => state.cartItems);
 

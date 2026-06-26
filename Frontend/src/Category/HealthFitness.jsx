@@ -11,11 +11,11 @@ function HealthFitness() {
   const dispatch = useDispatch();
 
 
-  const {
-    filteredProducts,
-    quantities,
-    status,
-  } = useSelector((state) => state.product);
+ const {
+  productItems,
+  quantities,
+  status,
+} = useSelector((state) => state.product);
 
   const { cart } = useSelector((state) => state.cartItems);
 
