@@ -18,9 +18,12 @@ connectDB();
 
 app.use(
   cors({
-    Origin: ["http://localhost:5173/", "https://luxecore-kappa.vercel.app/"],
+    origin: [
+      "http://localhost:5173",
+      "https://luxecore-kappa.vercel.app",
+    ],
     credentials: true,
-  }),
+  })
 );
 
 app.use(express.json());
