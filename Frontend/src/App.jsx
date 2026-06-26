@@ -28,15 +28,6 @@ import AdminDashboard from "./Admin/AdminDashboard"
 
 function App() {
   const dispatch = useDispatch();
-  useEffect(() => {
-  dispatch(fetchData());
-
-  const user = JSON.parse(localStorage.getItem("user"));
-
-  if (user) {
-    dispatch(fetchCartData());
-  }
-}, [dispatch]);
 
 useEffect(() => {
   const user = JSON.parse(
