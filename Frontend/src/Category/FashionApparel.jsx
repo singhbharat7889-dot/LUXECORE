@@ -30,7 +30,6 @@ function FashionApparel() {
     );
   }
 
-  const { cart } = useSelector((store) => store.cartItems);
 
   const handleIncrease = (id) => {
     dispatch(increaseQty(id));

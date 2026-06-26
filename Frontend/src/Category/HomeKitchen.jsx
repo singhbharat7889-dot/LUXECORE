@@ -30,7 +30,6 @@ function HomeKitchen() {
     );
   }
 
-  const { cart } = useSelector((store) => store.cartItems);
 
   const handleIncrease = (id) => {
     dispatch(increaseQty(id));
