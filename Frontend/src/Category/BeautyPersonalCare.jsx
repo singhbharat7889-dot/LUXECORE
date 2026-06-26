@@ -5,7 +5,6 @@ import { addToCart, updateCartQty } from "../Slice/CartSlice";
 import {
   increaseQty,
   decreaseQty,
-  filterItems,
 } from "../Slice/ProductSlice";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";

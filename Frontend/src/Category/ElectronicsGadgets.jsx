@@ -2,7 +2,7 @@ import "../Pages/Css/Home.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, updateCartQty } from "../Slice/CartSlice";
-import { increaseQty, decreaseQty, filterItems } from "../Slice/ProductSlice";
+import { increaseQty, decreaseQty,} from "../Slice/ProductSlice";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
