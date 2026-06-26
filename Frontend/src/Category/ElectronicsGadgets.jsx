@@ -14,9 +14,21 @@ function ElectronicsGadgets() {
     dispatch(filterItems("Electronics & Gadgets"));
   }, [dispatch]);
 
-  const { filteredProducts, quantities } = useSelector(
-    (store) => store.product,
-  );
+  const {
+    filteredProducts,
+    quantities,
+    status,
+  } = useSelector((state) => state.product);
+
+  const { cart } = useSelector((state) => state.cartItems);
+
+  if (status === "loading") {
+    return (
+      <Container className="text-center py-5">
+        <h3>Loading products...</h3>
+      </Container>
+    );
+  }
 
   const { cart } = useSelector((store) => store.cartItems);
 
