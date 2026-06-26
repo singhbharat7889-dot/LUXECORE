@@ -2,8 +2,7 @@ import { useState } from "react";
 import { FaBars, FaUser } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { filterItems } from "../Slice/ProductSlice";
+import { useSelector } from "react-redux";
 import "../NavBar/logo.css";
 
 const CATEGORIES = [
@@ -16,7 +15,6 @@ const CATEGORIES = [
 
 function Navbar() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const { cart } = useSelector((store) => store.cartItems);
 
@@ -31,9 +29,8 @@ function Navbar() {
   const user = JSON.parse(localStorage.getItem("user"));
 
   const handleCategoryClick = (category) => {
-    dispatch(filterItems(category));
-
     const routePath = category.replace(/[\s&]+/g, "");
+
     navigate(`/${routePath}`);
 
     setCategoryOpen(false);
@@ -80,7 +77,7 @@ function Navbar() {
                   </NavLink>
                 </li>
 
-                {/* Custom Category Dropdown */}
+                {/* Category Dropdown */}
                 <li
                   className="nav-item position-relative"
                   onMouseEnter={() => setCategoryOpen(true)}
@@ -104,9 +101,7 @@ function Navbar() {
                         <li key={cat}>
                           <button
                             className="dropdown-item"
-                            onClick={() =>
-                              handleCategoryClick(cat)
-                            }
+                            onClick={() => handleCategoryClick(cat)}
                           >
                             {cat}
                           </button>
@@ -135,9 +130,7 @@ function Navbar() {
             <div
               className="position-relative cp"
               onClick={() =>
-                navigate(
-                  user ? "/UserProfile" : "/UserLogin"
-                )
+                navigate(user ? "/UserProfile" : "/UserLogin")
               }
             >
               <FaUser size={22} />
@@ -186,9 +179,7 @@ function Navbar() {
               <button
                 key={cat}
                 className="dropdown-item"
-                onClick={() =>
-                  handleCategoryClick(cat)
-                }
+                onClick={() => handleCategoryClick(cat)}
               >
                 {cat}
               </button>
