@@ -10,9 +10,6 @@ function HomeKitchen() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(filterItems("Home & Kitchen"));
-  }, [dispatch]);
 
    const {
     filteredProducts,
@@ -21,6 +18,10 @@ function HomeKitchen() {
   } = useSelector((state) => state.product);
 
   const { cart } = useSelector((state) => state.cartItems);
+  const filteredProducts = productItems.filter(
+    (item) => item.category === "Home & Kitchen"
+  );
+
 
   if (status === "loading") {
     return (

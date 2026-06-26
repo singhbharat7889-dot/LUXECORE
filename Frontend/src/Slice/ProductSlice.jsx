@@ -26,7 +26,7 @@ const initialState = {
 
   productItems: [],
 
-  filteredProducts: [],
+  // filteredProducts: [],
 
   quantities: {},
 
@@ -44,23 +44,23 @@ const productSlice =
 
     reducers: {
 
-      filterItems:
-        (state, action) => {
+      // filterItems:
+      //   (state, action) => {
 
-          state.filteredProducts =
-            state.productItems.filter(
+      //     state.filteredProducts =
+      //       state.productItems.filter(
 
-              (item) =>
-                item.category ===
-                action.payload
-            );
-        },
+      //         (item) =>
+      //           item.category ===
+      //           action.payload
+      //       );
+      //   },
 
-      clearFilter:
-        (state) => {
+      // clearFilter:
+      //   (state) => {
 
-          state.filteredProducts = [];
-        },
+      //     state.filteredProducts = [];
+      //   },
 
       increaseQty:
         (state, action) => {
@@ -137,9 +137,9 @@ const productSlice =
 
 export const {
 
-  filterItems,
+  // filterItems,
 
-  clearFilter,
+  // clearFilter,
 
   increaseQty,
 

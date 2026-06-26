@@ -10,9 +10,6 @@ function ElectronicsGadgets() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(filterItems("Electronics & Gadgets"));
-  }, [dispatch]);
 
   const {
     filteredProducts,
@@ -21,6 +18,11 @@ function ElectronicsGadgets() {
   } = useSelector((state) => state.product);
 
   const { cart } = useSelector((state) => state.cartItems);
+
+
+const filteredProducts = productItems.filter(
+  (item) => item.category === "Electronics & Gadgets"
+);
 
   if (status === "loading") {
     return (

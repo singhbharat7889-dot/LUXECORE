@@ -10,9 +10,6 @@ function FashionApparel() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(filterItems("Fashion & Apparel"));
-  }, [dispatch]);
 
   const {
     filteredProducts,
@@ -21,6 +18,11 @@ function FashionApparel() {
   } = useSelector((state) => state.product);
 
   const { cart } = useSelector((state) => state.cartItems);
+
+
+  const filteredProducts = productItems.filter(
+    (item) => item.category === "Fashion & Apparel"
+  );
 
   if (status === "loading") {
     return (

@@ -14,9 +14,6 @@ function BeautyPersonalCare() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(filterItems("Beauty & Personal Care"));
-  }, [dispatch]);
 
   const {
     filteredProducts,
@@ -25,6 +22,10 @@ function BeautyPersonalCare() {
   } = useSelector((state) => state.product);
 
   const { cart } = useSelector((state) => state.cartItems);
+
+  const filteredProducts = productItems.filter(
+    (item) => item.category === "Beauty & Personal Care"
+  );
 
   if (status === "loading") {
     return (

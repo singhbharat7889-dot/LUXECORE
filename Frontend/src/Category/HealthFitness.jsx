@@ -10,10 +10,7 @@ function HealthFitness() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(filterItems("Health & Fitness"));
-  }, [dispatch]);
-  
+
   const {
     filteredProducts,
     quantities,
@@ -21,6 +18,11 @@ function HealthFitness() {
   } = useSelector((state) => state.product);
 
   const { cart } = useSelector((state) => state.cartItems);
+
+
+  const filteredProducts = productItems.filter(
+    (item) => item.category === "Health & Fitness"
+  );
 
   if (status === "loading") {
     return (
