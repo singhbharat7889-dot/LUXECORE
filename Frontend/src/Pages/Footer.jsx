@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 import "./Css/Footer.css";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -29,7 +29,7 @@ LuxeCore
             <p><a  className=" text-decoration-none">Fashion & Apparel</a></p>
             <p><a  className=" text-decoration-none"
             onClick={() =>
-                      Navigate("/BeautyPersonalCare")}
+                      navigate("/BeautyPersonalCare")}
             >Beauty & Personal Care</a></p>
             <p><a  className=" text-decoration-none"  >Home & Kitchen</a></p>
             <p><a  className=" text-decoration-none">Health & Fitness</a></p>
