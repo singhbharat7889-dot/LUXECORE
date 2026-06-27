@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { FaRegHeart, FaShippingFast, FaShieldHeart, FaHeadset } from "react-icons/fa6";
+import { FaRegHeart, FaShieldHeart, FaHeadset } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import "./Css/Home.css"; // Reuses your home text structures
 import "./Css/About.css"; // For page-specific layouts
