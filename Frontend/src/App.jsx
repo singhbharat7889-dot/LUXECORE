@@ -20,53 +20,93 @@ import ProductForm from "./Admin/ProductForm";
 import Product from "./Admin/Product";
 import EditProduct from "./Admin/EditProduct";
 import AdminRoute from "./Admin/AdminRoutes";
-import UserProfile from "./Pages/UserProfile"
+import UserProfile from "./Pages/UserProfile";
 import UserLayout from "./Layout/UserLayout";
 import AdminLayout from "./Layout/AdminLayout";
 import AdminNavbar from "./Admin/AdminNavbar";
-import AdminDashboard from "./Admin/AdminDashboard"
+import AdminDashboard from "./Admin/AdminDashboard";
+import About from "./Pages/About";
 
 function App() {
   const dispatch = useDispatch();
 
-useEffect(() => {
-  dispatch(fetchData());
+  useEffect(() => {
+    dispatch(fetchData());
 
-  const user = JSON.parse(localStorage.getItem("user"));
+    const user = JSON.parse(localStorage.getItem("user"));
 
-  if (user) {
-    dispatch(fetchCartData());
-  }
-}, [dispatch]);
+    if (user) {
+      dispatch(fetchCartData());
+    }
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
-      
       <Routes>
-        <Route element={<UserLayout/>}>
-        <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/Cart" element={<Cart />} />
-        <Route path="/UserLogin" element={<UserLogin />} />
-        <Route path="/UserRegister" element={<UserRegister />} />
-        <Route path="/BeautyPersonalCare" element={<BeautyPersonalCare />} />
-        <Route path="/FashionApparel" element={<FashionApparel />} />
-        <Route path="/ElectronicsGadgets" element={<ElectronicsGadgets />} />
-        <Route path="/HomeKitchen" element={<HomeKitchen />} />
-        <Route path="/HealthFitness" element={<HealthFitness />} />
-        <Route path="/ProductPage/:id" element={<ProductPage />} />
-        <Route path="/UserProfile" element={<UserProfile />} />
+        <Route element={<UserLayout />}>
+          <Route path="/" element={<Home />} />
+
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/Cart" element={<Cart />} />
+          <Route path="/UserLogin" element={<UserLogin />} />
+          <Route path="/UserRegister" element={<UserRegister />} />
+          <Route path="/BeautyPersonalCare" element={<BeautyPersonalCare />} />
+          <Route path="/FashionApparel" element={<FashionApparel />} />
+          <Route path="/ElectronicsGadgets" element={<ElectronicsGadgets />} />
+          <Route path="/HomeKitchen" element={<HomeKitchen />} />
+          <Route path="/HealthFitness" element={<HealthFitness />} />
+          <Route path="/ProductPage/:id" element={<ProductPage />} />
+          <Route path="/UserProfile" element={<UserProfile />} />
+          <Route path="/Aboutus" element={<About />} />
         </Route>
-        <Route element={<AdminLayout/>}>
-        <Route path="/ProductForm" element={<AdminRoute> <ProductForm /></AdminRoute>}/>
-        <Route path="/EditProduct/:id" element={<AdminRoute> <EditProduct /></AdminRoute>}/>
-        <Route path="/Product" element={<AdminRoute> <Product /></AdminRoute>}/>
-        <Route path="/AdminNavbar" element={<AdminRoute> <AdminNavbar /></AdminRoute>}/>
-        <Route path="/AdminDashboard" element={<AdminRoute> <AdminDashboard /></AdminRoute>}/>
-        
+        <Route element={<AdminLayout />}>
+          <Route
+            path="/ProductForm"
+            element={
+              <AdminRoute>
+                {" "}
+                <ProductForm />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="/EditProduct/:id"
+            element={
+              <AdminRoute>
+                {" "}
+                <EditProduct />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="/Product"
+            element={
+              <AdminRoute>
+                {" "}
+                <Product />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="/AdminNavbar"
+            element={
+              <AdminRoute>
+                {" "}
+                <AdminNavbar />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="/AdminDashboard"
+            element={
+              <AdminRoute>
+                {" "}
+                <AdminDashboard />
+              </AdminRoute>
+            }
+          />
         </Route>
       </Routes>
- 
     </BrowserRouter>
   );
 }

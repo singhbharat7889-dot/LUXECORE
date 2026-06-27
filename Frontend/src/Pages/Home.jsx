@@ -257,7 +257,11 @@ function Home() {
               collections and premium essentials for everyday living.
             </p>
 
-            <button className="btn btn-outline-dark rounded-pill px-4">
+            <button className="btn btn-outline-dark rounded-pill px-4" 
+            onClick={() =>
+                            navigate("/Aboutus")
+                          }
+            >
               Learn More
             </button>
           </div>

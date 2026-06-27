@@ -25,14 +25,26 @@ LuxeCore
           {/* Quick Links */}
           <Col md={2} lg={2} xl={2} className="mx-auto mt-3">
             <h6 className="text-uppercase mb-4 fw-bold">Quick links</h6>
-            <p><a  className=" text-decoration-none" >Electronics & Gadgets</a></p>
-            <p><a  className=" text-decoration-none">Fashion & Apparel</a></p>
+            <p><a  className=" text-decoration-none" 
+            onClick={() =>
+                      navigate("/ElectronicsGadgets")}
+            >Electronics & Gadgets</a></p>
+            <p><a  className=" text-decoration-none"
+            onClick={() =>
+                      navigate("/FashionApparel")}
+            >Fashion & Apparel</a></p>
             <p><a  className=" text-decoration-none"
             onClick={() =>
                       navigate("/BeautyPersonalCare")}
             >Beauty & Personal Care</a></p>
-            <p><a  className=" text-decoration-none"  >Home & Kitchen</a></p>
-            <p><a  className=" text-decoration-none">Health & Fitness</a></p>
+            <p><a  className=" text-decoration-none" 
+            onClick={() =>
+                      navigate("/HomeKitchen")}
+            >Home & Kitchen</a></p>
+            <p><a  className=" text-decoration-none"
+            onClick={() =>
+                      navigate("/HealthFitness")}
+            >Health & Fitness</a></p>
           </Col>
 
           {/* Contact & Support */}
