@@ -61,7 +61,7 @@ function About() {
 
             <Col xs={12} md={4}>
               <div className="p-4 bg-white rounded-4 shadow-sm h-100 border-0">
-                <FaShippingFast className="text-primary mb-3" size={40} />
+    
                 <h5 className="fw-bold mb-3">Global Shipping</h5>
                 <p className="text-muted small mb-0">
                   Enjoy reliable, prompt, and traceable packaging fulfillment directly across borders with secure tracking setups.
